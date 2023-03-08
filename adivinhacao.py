@@ -12,7 +12,6 @@ def jogar():
         numero_secreto = random.randrange(1, 101)
         total_de_tentativas = 0
         pontos = 1000
-        print(numero_secreto)
 
         print("Qual nível de dificuldade você deseja?\n")
         print("(1) - Fácil (2) - Médio (3) - Difícil")
@@ -63,14 +62,15 @@ def jogar():
             print("O número secreto era {}.".format(numero_secreto))
 
         while True:
-            jogar_novamente = input("Deseja jogar novamente? (S/N) ")
+            jogar_novamente = input("Deseja jogar novamente? (S/N) ").lower()
 
-            if jogar_novamente.lower() == "n":
+            if jogar_novamente == "n":
                 jogar_novamente = False
                 print("FIM DO JOGO!!")
                 break
-            elif jogar_novamente.lower() == "s":
+            elif jogar_novamente == "s":
                 print("Vamos jogar novamente!")
+                jogar_novamente = True
                 break
             else:
                 print("Opção inválida! Digite S para jogar novamente ou N para encerrar o jogo.")

@@ -43,7 +43,7 @@ def jogar():
     if(acertou):
         print("Voce ganhou!!")
     else:
-        print("Vc perdeu!!")
+        print("Vce perdeu!!")
 
     print("FIM DO JOGO!")
 

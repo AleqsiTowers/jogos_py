@@ -9,3 +9,12 @@ celular
 modelo
 cidade
 continente
+garrafa
+orangotango
+chimpanze
+computador
+mercenario
+portugal
+brasil
+inglaterra
+travesseiro

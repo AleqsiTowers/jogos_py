@@ -1,7 +1,6 @@
 import random
 
 def jogar():
-
     jogar_novamente = True
 
     while jogar_novamente == True:
@@ -9,37 +8,42 @@ def jogar():
         palavra_secreta = carrega_palavra_secreta()
 
         letras_acertadas = ["_" for letra in palavra_secreta]
+        letras_erradas = []
         erros = 0
         print(letras_acertadas)
 
         enforcou = False
         acertou = False
 
-        while(not enforcou and not acertou):
+        while (not enforcou and not acertou):
 
             chute = pede_chute()
 
-            if(chute in palavra_secreta):
+            if (chute in palavra_secreta):
                 index = 0
                 for letra in palavra_secreta:
-                    if(chute == letra):
+                    if (chute == letra):
                         letras_acertadas[index] = letra
                     index += 1
             else:
+                if(chute not in palavra_secreta):
+                    letras_erradas.append(chute)
                 erros += 1
                 desenha_forca(erros)
+            print("\nVocê errou {} de 7 vezes possíveis.".format(erros))
+            print("Letras que você errou: {}".format(letras_erradas))
 
             enforcou = erros == 7
             acertou = "_" not in letras_acertadas
             print(letras_acertadas)
 
-        if(acertou):
-            print("Voce ganhou!!")
+        if (acertou):
+            print("Parabéns, você ganhou!\n")
         else:
             print("Puxa, você foi enforcado!")
             print("A palavra era {}".format(palavra_secreta))
         while True:
-            jogar_novamente = input("Deseja jogar novamente? (S/N) ").lower()
+            jogar_novamente = input("Deseja jogar novamente? (S/N)").lower()
 
             if jogar_novamente == "n":
                 jogar_novamente = False
@@ -59,6 +63,7 @@ def imprime_mensagem_abertura():
     print("BEM VINDO AO JOGO DA FORCA!")
     print("***************************\n")
 
+
 def carrega_palavra_secreta():
     arquivo = open("palavras.txt", "r", encoding="utf-8")
     palavras = []
@@ -72,10 +77,10 @@ def carrega_palavra_secreta():
     palavra_secreta = palavras[numero].upper()
     return palavra_secreta
 
+
 def pede_chute():
     chute = input("Qual letra? ")
     chute = chute.strip().upper()
-    chute = chute.replace("C", "Ç")
     return chute
 
 def desenha_forca(erros):

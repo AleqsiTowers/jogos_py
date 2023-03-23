@@ -8,14 +8,20 @@ def escolhe_jogo():
 
     print("(1) Forca (2) Adivinhacao")
 
-    jogo = int(input("Escolha seu jogo: "))
+    while True:
 
-    if(jogo == 1):
-        print("Jogando forca")
-        forca.jogar()
-    elif (jogo == 2):
-        print("\nJogando Adivinhação")
-        adivinhacao.jogar()
+        jogo = int(input("Escolha seu jogo: "))
+
+        if(jogo == 1):
+            print("\nJogando forca")
+            forca.jogar()
+
+        elif (jogo == 2):
+            print("\nJogando Adivinhação")
+            adivinhacao.jogar()
+
+        else:
+            print("Você deve escolher 1 ou 2\n")
 
 if(__name__ =="__main__"):
     escolhe_jogo()

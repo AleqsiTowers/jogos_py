@@ -30,6 +30,7 @@ def jogar():
                 break
             else:
                 print("Você deve digitar um valor de 1 a 3.\n")
+                continue
 
         for rodada in range(1, total_de_tentativas + 1):
             print("Tentativa {} de {}".format(rodada, total_de_tentativas))

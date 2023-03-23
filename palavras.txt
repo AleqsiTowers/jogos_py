@@ -1,4 +1,8 @@
 banana
+corrimao
+corrida
+central
+caminhada
 melancia
 maça
 morango
@@ -10,10 +14,8 @@ modelo
 cidade
 continente
 garrafa
-orangotango
 chimpanze
 computador
-mercenario
 portugal
 brasil
 inglaterra
